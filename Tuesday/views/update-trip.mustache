@@ -1,0 +1,20 @@
+<html>
+<head></head>
+
+
+
+<body>
+    {{#updateTrip}}
+
+<form action = '/update-trip' method = 'POST'>
+    <input type = 'text' name = 'tripName' value = {{tripName}} readonly>
+    <input type = 'text' name = 'tripImage' value = {{tripImage}}>
+    <input type = 'date' name = 'tripStart' value = {{tripStart}}>
+    <input type = 'date' name = 'tripEnd' value = {{tripEnd}}>
+    <button type = 'submit'>Update Trip!</button>
+</form>
+
+    {{/updateTrip}}
+</body>
+
+</html>

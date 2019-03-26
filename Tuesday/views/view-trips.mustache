@@ -1,0 +1,38 @@
+<html>
+<head>
+</head>
+
+<body>
+<h1 class = 'header'>Hello! Here are all your trips</h1>
+<form action = 'view-trips' method = 'POST'>
+<button formaction = '/sort'>Click here to sort from the most recent!</button>
+<button formaction = '/viewAll'>View All Destinations!</button> 
+</form>
+<br>
+<form action = 'view-trips' method = 'POST'>
+<input type = 'search' name = 'searchName' placeholder = 'search by city here...'>
+<button formaction = '/search'>Search</button>  
+</form> 
+
+<ul>
+  {{#tripList}}
+  <li>
+    <form action = 'view-trips' method = 'POST'>
+    {{tripName}}
+    <img src = {{tripImage}} style = "width:250px">
+    <span>{{tripStart}}</span>
+    <span>{{tripEnd}}</span>
+    <input type = "hidden" name = "tripNameInput" value = {{tripName}}>
+    <button formaction = '/delete'>Delete</button>
+    <button type = 'submit' value = {{tripName}}>Update Trip!</button>
+    </form>
+  </li> 
+  {{/tripList}}
+</ul>
+
+<a href = "add-trip">Click here to add a trip!</a>
+
+
+</body>
+
+</html>
