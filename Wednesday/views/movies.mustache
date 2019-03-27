@@ -1,0 +1,35 @@
+<html>
+<head></head>
+
+<body>
+    <form enctype="multipart/form-data" action = 'movies' method = 'POST'>
+        Add a Movie!
+        <input type = 'text' name = 'movieTitle' placeholder = 'Movie Title'>
+        <input type = 'text' name = 'movieGenre' placeholder = 'Genre'>
+        <input type = 'text' name = 'movieDesc' placeholder = 'Description'>
+        <input type = 'text' name = 'movieURL' placeholder = 'Image URL (or Attach File)'>
+        <br><label for="avatar">Upload your own picture instead!</label>
+        <input type="file" name="moviePicture" accept="image/png, image/jpeg">
+        <button formaction = '/movies/add'>Submit</button>
+    </form>
+
+    <h1>Movie search example: /movies/the-matrix <br>
+        Genre search example: /movies/genre/fantasy</h1>
+    <UL>
+    {{#movieList}}
+     <li>
+    <form action = 'movies' method = 'POST'>
+    <h1>{{title}}</h1>
+    <h2>{{genre}}</h2>
+    <p>{{description}}</p>
+    <img src = {{postURL}} style = 'width:320px'>
+    <input type = 'hidden' name = 'deleteTitle' value = "{{title}}">
+    <button formaction = '/movies/delete'>&#10060;</button>    
+    </form>
+    </li>
+    {{/movieList}}
+
+    </UL>
+</body>
+
+</html>
