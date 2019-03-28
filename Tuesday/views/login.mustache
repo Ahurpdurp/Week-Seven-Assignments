@@ -1,0 +1,27 @@
+<html>
+<head>
+<link rel = 'stylesheet' href = 'styles.css'>
+
+</head>
+
+<body>
+<h1>Login to an Existing Account!</h1>
+<form action = '/login' method = 'POST'>
+    <input type = 'text' name = 'username' placeholder = 'Username'>
+    <input type = 'password' name = 'password' placeholder = 'Password'>
+    <button type = 'submit'>Submit</button>
+</form> 
+
+<h1>Register a New Account!</h1>
+<form action = '/login' method = 'POST'>
+    <input type = 'text' name = 'newUser' placeholder = 'New User'>
+    <input type = 'password' name = 'newPass' placeholder = 'New Password'>
+    <button formaction = '/login/newAcc' type = 'submit'>Submit</button>
+</form> 
+
+<h1>
+    {{message}}
+</h1>
+</body>
+
+</html>
